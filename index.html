@@ -1,72 +1,151 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>6</title>
-<meta charset="UTF-8">
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Comic Sans">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-light-blue.css">   
+<title>6</title>
+<script src="https://unpkg.com/feather-icons"></script>
+
 <style>
-body,h1,h2,h3,h4,h5 {font-family: "Comic Sans", sans-serif}
-.w3-third img{margin-bottom: -6px; opacity: 0.8; cursor: pointer}
-.w3-third img:hover{opacity: 1}
+
+body {
+  background-image: url("https://www.w3schools.com/howto/img_link_tree_template3_bg.jpg"); /* The image used for background */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.name {
+  margin-top: 15px !important;
+}
+
+.w3-theme-d3 {
+  background-color: rgba(42, 169, 219, 0.6) !important;
+}
+
+.w3-theme-d3:hover {
+  background-color: rgba(42, 169, 219, 0.8) !important;
+}
+
+a {
+  font-size: x-large;
+}
+
+.w3-border {
+  border: 3px solid #ccc !important;
+}
+
+.links-container {
+  display: flex;
+  flex-direction: column;
+  jusify-content: center;
+  align-items: center;
+}
+
+.links-container a {
+  width: 80%;
+}
+
+.profession {
+  font-size: 14px;
+}
+
+.subscribe {
+  font-size: 15px;
+}
+
+.submit form {
+  display: flex;
+  flex-direction: column;
+}
+
+.submit form button {
+  margin-top: 5px;
+  background-color: rgba(27, 122, 159, 0.9) !important;
+  color: #fff !important;
+}
+
+.submit form button:hover {
+  background-color: rgba(15, 67, 87, 0.9) !important;
+  color: #fff !important;
+}
+.submit form input {
+  width: 100% !important;
+}
+.submit form input::placeholder {
+  color: #fff;
+}
+
+.icons {
+  display: flex;
+  gap: 40px;
+}
+
+.icons a {
+  text-decoration: none;
+}
+
+.icons a svg {
+  fill: #d0ecf7;
+  transform: scale(1.5);
+}
+
+@media screen and (min-width: 768px) {
+  .link {
+    width: 100%;
+  }
+}
+@media screen and (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+
+  .profession {
+    font-size: 24px;
+  }
+}
 </style>
-</head>
-<body class="w3-light-grey w3-content" style="max-width:1600px">
+  </head>
 
-<!-- Sidebar/menu -->
-<nav class="w3-sidebar w3-bar-block w3-grey w3-animate-middle w3-text-black w3-collapse w3-top w3-center" style="z-index:3;width:300px;font-weight:bold" id="mySidebar"><br>
-  <h3 class="w3-padding-64 w3-center"><b>insert bad website<br></h3>
-  <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-padding w3-hide-large">CLOSE</a>
- 
-  <a href="https://mi6.me/hidden.html" onclick="w3_close()" class="w3-bar-item w3-button">TOP 10 REASONS TO CUT GRASS (REAL)</a> 
-  <a href="https://mi6.me/bing.html" onclick="w3_close()" class="w3-bar-item w3-button">bad microsoft rewards farm</a> 
-  <a href="https://mi6.me/proxies.txt" onclick="w3_close()" class="w3-bar-item w3-button">bad http proxy list</a> 
-  <a href="https://mi6.me/test.html" onclick="w3_close()" class="w3-bar-item w3-button">b ad testing</a>
-  <a href="https://mi6.me/usernames.txt" onclick="w3_close()" class="w3-bar-item w3-button">bad untaken scratch users (words)</a>
-  <a href="https://mi6.me/uno.html" onclick="w3_close()" class="w3-bar-item w3-button">bad uno</a>
-  <a href="https://mi6.me/hangout.html" onclick="w3_close()" class="w3-bar-item w3-button">bad hangout</a>
-  <a href="https://mi6.me/pro.html" onclick="w3_close()" class="w3-bar-item w3-button">bad text editor</a>
-  <a href="https://mi6.me/minecraft.html" onclick="w3_close()" class="w3-bar-item w3-button">bad minecraft</a>
-  <a href="https://mi6.me/learn.html" onclick="w3_close()" class="w3-bar-item w3-button">test</a>
-</nav>
+  <body>
+    <!-- Content container -->
+    <div class="container">
 
-<!-- Top menu on small screens -->
-<header class="w3-container w3-top w3-hide-large w3-white w3-xlarge w3-padding-16">
-  <span class="w3-left w3-padding">which/one</span>
-  <a href="javascript:void(0)" class="w3-right w3-button w3-white" onclick="w3_open()">☰</a>
-</header>
+      <!-- Image and name container. Change to your picture here. -->
+      <div class="" style="text-align: center">
+        <img src="https://www.w3schools.com/howto/img_link_tree_template3_bio.jpg" class="w3-round" alt="person image" width="250px" height="200px" style="border-radius: 50%; border: 5px solid #4ab6e0 !important; margin-top: 16px;">
+        <p class="name"><br><span class="w3-padding w3-theme-l1 w3-margin w3-round" style="font-weight: bolder; font-size: x-large; border: 3px solid #1b7a9f;">best websites of 2025</span></p><br>
+        <p><span class="profession w3-padding w3-theme-d5 w3-round" style="font-weight: bolder; border: 3px solid #d0ecf7;">i am not a mountain climber</span></p><br>
+      </div>
 
-<!-- Overlay effect when opening sidebar on small screens -->
-<div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+      <!-- Links section 1. Replace the # inside of the "" with your links. -->
+      <div class="links-container">
+        <a href="#" class="w3-button w3-round w3-theme-d3 w3-border link" target="_blank">something</a>
+        <br>
+          </form>
+        </div><br>
+        <div class="icons w3-padding">
+          <a href="#" target="_blank">
+            <i data-feather="facebok"></i>
+          </a>
+      
+          </a>
+        </div>
+      </div>
 
-<!-- !PAGE CONTENT! -->
-<div class="w3-main" style="margin-left:300px">
-
-  <!-- Push down content on small screens --> 
-  <div class="w3-hide-large" style="margin-top:83px"></div>
-  
-
-
-<!-- End page content -->
-</div>
-
-<script>
-// Script to open and close sidebar
-function w3_open() {
-  document.getElementById("mySidebar").style.display = "block";
-  document.getElementById("myOverlay").style.display = "block";
-}
- 
-function w3_close() {
-  document.getElementById("mySidebar").style.display = "none";
-  document.getElementById("myOverlay").style.display = "none";
-}
-
-
-
-</script>
-
-
-</body>
-</html>
+    </div>
+    <script>
+      feather.replace()
+    </script>
+  </body>  </html>
