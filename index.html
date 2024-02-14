@@ -1,372 +1,239 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Make your websites look responsive, vibrant and beautiful with fire.css, a CSS stylesheet fire-themed.">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="A fire-themed and beautiful CSS stylesheet.">
-    <meta property="og:description" content="Make your websites look responsive, vibrant and beautiful with fire.css, a CSS stylesheet fire-themed.">
-    <title>fire.css</title>
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔥</text></svg>">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/a11y-dark.min.css">
-    <link href="https://firecss.hecker40.repl.co/fire.css" rel="stylesheet" type="text/css"/>
-    <link href="https://firecss.hecker40.repl.co/site.css" rel="stylesheet" type="text/css"/>
-  </head>
-  <body>
-    <nav class="navbar">
-      <a href="https://firecss.hecker40.repl.co">fire.css</a>
-      <ul class="nav-links">
-        <input type="checkbox" id="checkbox_toggle"/>
-        <label for="checkbox_toggle" class="hamburger">&#9776;</label>
-        <div class="menu">
-          <li class="nav-dropdown">
-            <a href="https://firecss.hecker40.repl.co/">Docs</a>
-            <ul class="dropdown">
-              <li><a href="https://firecss.hecker40.repl.co/#getstarted">Get started</a></li>
-              <li><a href="https://firecss.hecker40.repl.co/#basic">Basic</a></li>
-              <li><a href="https://firecss.hecker40.repl.co/#navbar">Navbar</a></li>
-              <li><a href="https://firecss.hecker40.repl.co/#inputs">Inputs</a></li>
-              <li><a href="https://firecss.hecker40.repl.co/#tables">Tables</a></li>
-              <li><a href="https://firecss.hecker40.repl.co/#cards">Cards</a></li>
-              <li><a href="https://firecss.hecker40.repl.co/#footer">Footer</a></li>
-              <li><a href="https://firecss.hecker40.repl.co/#extra">Extra</a></li>
-            </ul>
-          </li>
-          <li><a href="https://replitmedia.repl.co/">Demo</a></li>
-          <li><a href="https://firecss.hecker40.repl.co/about">About</a></li>
-        </div>
+<html lang="en">
+<head>
+<title>corndogs</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body {font-family: "Lato", sans-serif}
+.mySlides {display: none}
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-black w3-card">
+    <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">HOME</a>
+    <a href="#band" class="w3-bar-item w3-button w3-padding-large w3-hide-small">idk test</a>
+    <a href="#tour" class="w3-bar-item w3-button w3-padding-large w3-hide-small">idk 2</a>
+    <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hide-small">idk 3</a>
+    <div class="w3-dropdown-hover w3-hide-small">
+      <button class="w3-padding-large w3-button" title="More">MORE <i class="fa fa-caret-down"></i></button>     
+      <div class="w3-dropdown-content w3-bar-block w3-card-4">
+        <a href="#" class="w3-bar-item w3-button">Merchandise</a>
+        <a href="#" class="w3-bar-item w3-button">Extras</a>
+        <a href="#" class="w3-bar-item w3-button">Media</a>
+      </div>
+    </div>
+    <a href="javascript:void(0)" class="w3-padding-large w3-hover-red w3-hide-small w3-right"><i class="fa fa-search"></i></a>
+  </div>
+</div>
+
+<!-- Navbar on small screens (remove the onclick attribute if you want the navbar to always show on top of the content when clicking on the links) -->
+<div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:46px">
+  <a href="#band" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">BAND</a>
+  <a href="#tour" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">TOUR</a>
+  <a href="#contact" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">CONTACT</a>
+  <a href="#" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">MERCH</a>
+</div>
+
+<!-- Page content -->
+<div class="w3-content" style="max-width:2000px;margin-top:46px">
+
+  <!-- Automatic Slideshow Images -->
+  <div class="mySlides w3-display-container w3-center">
+    <img src="/w3images/la.jpg" style="width:100%">
+    <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
+      <h3>Los Angeles</h3>
+      <p><b>We had the best time playing at Venice Beach!</b></p>   
+    </div>
+  </div>
+  <div class="mySlides w3-display-container w3-center">
+    <img src="/w3images/ny.jpg" style="width:100%">
+    <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
+      <h3>New York</h3>
+      <p><b>The atmosphere in New York is lorem ipsum.</b></p>    
+    </div>
+  </div>
+  <div class="mySlides w3-display-container w3-center">
+    <img src="/w3images/chicago.jpg" style="width:100%">
+    <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
+      <h3>Chicago</h3>
+      <p><b>Thank you, Chicago - A night we won't forget.</b></p>    
+    </div>
+  </div>
+
+  <!-- The Band Section -->
+  <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="band">
+    <h2 class="w3-wide">THE BAND</h2>
+    <p class="w3-opacity"><i>We love music</i></p>
+    <p class="w3-justify">We have created a fictional band website. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+      ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur
+      adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    <div class="w3-row w3-padding-32">
+      <div class="w3-third">
+        <p>Name</p>
+        <img src="/w3images/bandmember.jpg" class="w3-round w3-margin-bottom" alt="Random Name" style="width:60%">
+      </div>
+      <div class="w3-third">
+        <p>Name</p>
+        <img src="/w3images/bandmember.jpg" class="w3-round w3-margin-bottom" alt="Random Name" style="width:60%">
+      </div>
+      <div class="w3-third">
+        <p>Name</p>
+        <img src="/w3images/bandmember.jpg" class="w3-round" alt="Random Name" style="width:60%">
+      </div>
+    </div>
+  </div>
+
+  <!-- The Tour Section -->
+  <div class="w3-black" id="tour">
+    <div class="w3-container w3-content w3-padding-64" style="max-width:800px">
+      <h2 class="w3-wide w3-center">TOUR DATES</h2>
+      <p class="w3-opacity w3-center"><i>Remember to book your tickets!</i></p><br>
+
+      <ul class="w3-ul w3-border w3-white w3-text-grey">
+        <li class="w3-padding">September <span class="w3-tag w3-red w3-margin-left">Sold out</span></li>
+        <li class="w3-padding">October <span class="w3-tag w3-red w3-margin-left">Sold out</span></li>
+        <li class="w3-padding">November <span class="w3-badge w3-right w3-margin-right">3</span></li>
       </ul>
-    </nav>
-    <main>
-      <h1>fire.css</h1>
-      <p>fire.css is a fire-themed and beautiful CSS stylesheet. Its made to make your websites look more responsive, vibrant and cooler. You can read more at <a href="https://firecss.hecker40.repl.co/about">About</a>, read our <a href="https://firecss.hecker40.repl.co/#faq">FAQ</a> if you have any questions, or look at our <a href="https://firecss-demo.hecker40.repl.co">demo</a> for an example of our stylesheet.</p>
-      <h1 class="section-header" id="getstarted">Get started</h1>
-      <p>Create a new <code>index.html</code> file in your project root, and copy the HTML code below you'll need to get started.</p>
-      <pre><code class="language-html">&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-  &lt;head&gt;
-    &lt;meta charset="utf-8"&gt;
-    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
-    &lt;title&gt;Title&lt;/title&gt;
-    &lt;link href="https://firecss.hecker40.repl.co/fire.css" rel="stylesheet" type="text/css"/&gt;
-    &lt;link href="https://website.com/site.css" rel="stylesheet" type="text/css"/&gt;
-  &lt;/head&gt;
-  &lt;body&gt;
-    &lt;main&gt;
-    &lt;/main&gt;
-    &lt;script src="https://website.com/site.js"&gt;&lt;/script&gt;
-  &lt;/body&gt;
-&lt;/html&gt;</code></pre>
-      <p>This will be the basic structure of our HTML until we start adding more code. Note that <code>https://website.com/site.css</code> and <code>https://website.com/site.js</code> are just examples, in your actual project you would remove them and replace the URLs to your own scripts and stylesheets.</p>
-      <h1 class="section-header" id="basic">Basic</h1>
-      <p>In this section we'll be talking about the basic components of HTML, such as headers, images, section dividers, paragraphs, links and styles. We'll be talking about headers first.</p>
-      <pre><code class="language-html">&lt;h1&gt;Header 1&lt;/h1&gt;
-&lt;h2&gt;Header 2&lt;/h2&gt;
-&lt;h3&gt;Header 3&lt;/h3&gt;
-&lt;h4&gt;Header 4&lt;/h4&gt;
-&lt;h5&gt;Header 5&lt;/h5&gt;
-&lt;h6&gt;Header 6&lt;/h6&gt;</code></pre>
-      <h1 class="section-header">Header 1</h1>
-      <h2>Header 2</h2>
-      <h3>Header 3</h3>
-      <h4>Header 4</h4>
-      <h5>Header 5</h5>
-      <h6>Header 6</h6>
-      <hr>
-      <p>Images, section dividers, paragraphs, links and styles here.</p>
-      <pre><code class="language-html">&lt;img src="https://website.com/image.png"/&gt;
-&lt;hr&gt;
-&lt;p&gt;Paragraph&lt;/p&gt;
-&lt;a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"&gt;Link&lt;/a&gt;
-&lt;b&gt;Bold text&lt;/b&gt;
-&lt;i&gt;Italic text&lt;/i&gt;
-&lt;u&gt;Underline text&lt;/u&gt;
-&lt;s&gt;Strikethrough text&lt;/s&gt;</code></pre>
-      <img src="https://firecss.hecker40.repl.co/image.jpg"/>
-      <hr>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nunc mi ipsum faucibus vitae aliquet. Odio eu feugiat pretium nibh ipsum. Aliquam eleifend mi in nulla posuere. A cras semper auctor neque vitae tempus quam.</p>
-      <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Link</a>
-      <b>Bold text</b>
-      <i>Italic text</i>
-      <u>Underline text</u>
-      <s>Strikethrough text</s>
-      <h1 class="section-header" id="navbar">Navbar</h1>
-      <p>Our fully responsive navbar, including dropdowns and a soothing background.</p>
-      <pre><code class="language-html">&lt;nav class="navbar"&gt;
-  &lt;a href="https://firecss.hecker40.repl.co"&gt;&lt;img src="https://website.com/image.png"/&gt;&nbsp;Title&lt;/a&gt;
-  &lt;ul class="nav-links"&gt;
-    &lt;input type="checkbox" id="checkbox_toggle"/&gt;
-    &lt;label for="checkbox_toggle" class="hamburger"&gt;&#9776;&lt;/label&gt;
-    &lt;div class="menu"&gt;
-      &lt;li&gt;&lt;a href="https://website.com/link"&gt;Link&lt;/a&gt;&lt;/li&gt;
-      &lt;li class="nav-dropdown"&gt;
-        &lt;a href="https://website.com/link"&gt;Link&lt;/a&gt;
-        &lt;ul class="dropdown"&gt;
-          &lt;li&gt;&lt;a href="https://website.com/link"&gt;Dropdown&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href="https://website.com/link"&gt;Dropdown&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href="https://website.com/link"&gt;Dropdown&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href="https://website.com/link"&gt;Dropdown&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href="https://website.com/link"&gt;Dropdown&lt;/a&gt;&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;li&gt;&lt;a href="https://website.com/link"&gt;Link&lt;/a&gt;&lt;/li&gt;
-  &lt;/div&gt;
-  &lt;/ul&gt;
-&lt;/nav&gt;</code></pre>
-      <p>Be sure to place your navbar in front of your <code>&lt;main&gt;</code> tag and not inside it, or else the navbar won't work.</p>
-      <iframe src="https://firecss-navbar-example.hecker40.repl.co/" height="300" width="100%"></iframe>
-      <h1 class="section-header" id="buttons">Buttons</h1>
-      <p>A default and secondary button.</p>
-      <pre><code class="language-html">&lt;button&gt;Default button&lt;/button&gt;
-&lt;button class="btn-secondary"&gt;Secondary button&lt;/button&gt;</code></pre>
-      <button>Default button</button>
-      <button class="btn-secondary">Secondary button</button>
-      <hr>
-      <p>Our toolkit also includes buttons of all sizes, including big and small ones. As a side note, you can combine classes (such as <code>btn-secondary</code> and <code>btn-small</code> to make a secondary and small button, as demonstrated below.</p>
-      <pre><code class="language-html">&lt;button class="btn-large"&gt;Large button&lt;/button&gt;
-&lt;button class="btn-secondary btn-small"&gt;Small button&lt;/button&gt;</code></pre>
-      <button class="btn-large">Large button</button>
-      <button class="btn-secondary btn-small">Small button</button>
-      <hr>
-      <p>Make buttons look inactive by adding the <code>disabled</code> state to any <code>&lt;button&gt;</code> element.</p>
-      <pre><code class="language-html">&lt;button disabled&gt;Disabled button&lt;/button&gt;
-&lt;button class="bg-secondary" disabled&gt;Disabled button&lt;/button&gt;</code></pre>
-      <button disabled>Disabled button</button>
-      <hr>
-      <p>Have too much text that won't fit the button? Don't worry, we also have block buttons, or long buttons that take up a lot 100% of the device width to ensure that your text won't overfill.</p>
-      <pre><code class="language-html">&lt;button class="btn-block"&gt;Block button&lt;/button&gt;</code></pre>
-      <button class="btn-block">Block button</button>
-      <h1 class="section-header" id="inputs">Inputs</h1>
-      <p>This is a default <code>&lt;input&gt;</code> and <code>&lt;textarea&gt;</code> element. Be sure to set the attribute <code>type</code> to <code>text</code> for default inputs, or else it won't work.</p>
-      <pre><code class="language-html">&lt;input type="text" placeholder="Default input"/&gt;
-&lt;textarea placeholder="Default textarea"&gt;&lt;/textarea&gt;</code></pre>
-      <input type="text" placeholder="Default input"/>
-      <textarea placeholder="Default textarea"></textarea>
-      <hr>
-      <p>A readonly input; try typing in it!</p>
-      <pre><code class="language-html">&lt;input type="text" placeholder="Readonly input" readonly/&gt;</code></pre>
-      <input type="text" placeholder="Readonly input" readonly/>
-      <hr>
-      <p>Disabled inputs here.</p>
-      <pre><code class="language-html">&lt;input type="text" placeholder="Disabled input" disabled/&gt;</code></pre>
-      <input type="text" placeholder="Disabled input" disabled/>
-      <hr>
-      <p>Select files with our very own file selector.</p>
-      <pre><code class="language-html">&lt;div class="file-input-container"&gt;
-  &lt;label class="file-selector" for="upload"&gt;Upload file&lt;/label&gt;
-  &lt;input id="upload" type="file"&gt;
-&lt;/div&gt;</code></pre>
-      <div class="file-container">
-        <label class="file-selector" for="upload">Upload file</label>
-        <input id="upload" type="file">
-      </div>
-      <hr>
-      <p>A toggle switch. You can add the <code>checked</code> state to make the toggle switch checked by default.</p>
-      <pre><code class="language-html">&lt;label class="switch"&gt;
-  &lt;input type="checkbox" checked&gt;
-  &lt;span class="slider round"&gt;&lt;/span&gt;
-&lt;/label&gt;</code></pre>
-      <label class="switch">
-        <input type="checkbox" checked>
-        <span class="slider round"></span>
-      </label>
-      <hr>
-      <p>Checkbox inputs. You can add <code>checked="checked"</code> to make a certain checkbox checked by default. This also applies to radio inputs.</p>
-      <pre><code class="language-html">&lt;label class="checkbox-container"&gt;Option 1
-  &lt;input type="checkbox" checked="checked"&gt;
-  &lt;span class="checkbox-mark"&gt;&lt;/span&gt;
-&lt;/label&gt; 
-&lt;label class="checkbox-container"&gt;Option 2
-  &lt;input type="checkbox"&gt;
-  &lt;span class="checkbox-mark"&gt;&lt;/span&gt;
-&lt;/label&gt;
-&lt;label class="checkbox-container"&gt;Option 3
-  &lt;input type="checkbox"&gt;
-  &lt;span class="checkbox-mark"&gt;&lt;/span&gt;
-&lt;/label&gt;
-&lt;label class="checkbox-container"&gt;Disabled option
-  &lt;input type="checkbox" disabled&gt;
-  &lt;span class="checkbox-mark"&gt;&lt;/span&gt;
-&lt;/label&gt;</code></pre>
-      <label class="checkbox-container">Option 1
-        <input type="checkbox" checked="checked">
-        <span class="checkbox-mark"></span>
-      </label> 
-      <label class="checkbox-container">Option 2
-        <input type="checkbox">
-        <span class="checkbox-mark"></span>
-      </label>
-      <label class="checkbox-container">Option 3
-        <input type="checkbox">
-        <span class="checkbox-mark"></span>
-      </label>
-      <label class="checkbox-container">Disabled option
-        <input type="checkbox" disabled>
-        <span class="checkbox-mark"></span>
-      </label>
-      <hr>
-      <p>Radio inputs. As mentioned above, this will have the same features as the checkbox inputs.</p>
-      <pre><code class="language-html">&lt;label class="radio-container"&gt;Option 1
-  &lt;input type="radio" checked="checked"&gt;
-  &lt;span class="radio-mark"&gt;&lt;/span&gt;
-&lt;/label&gt; 
-&lt;label class="radio-container"&gt;Option 2
-  &lt;input type="radio"&gt;
-  &lt;span class="radio-mark"&gt;&lt;/span&gt;
-&lt;/label&gt;
-&lt;label class="radio-container"&gt;Option 3
-  &lt;input type="radio"&gt;
-  &lt;span class="radio-mark"&gt;&lt;/span&gt;
-&lt;/label&gt;
-&lt;label class="radio-container"&gt;Disabled option
-  &lt;input type="radio" disabled&gt;
-  &lt;span class="radio-mark"&gt;&lt;/span&gt;
-&lt;/label&gt;</code></pre>
-      <label class="radio-container">Option 1
-        <input type="radio" checked="checked" name="radio">
-        <span class="radio-mark"></span>
-      </label>
-      <label class="radio-container">Option 2
-        <input type="radio" name="radio">
-        <span class="radio-mark"></span>
-      </label>
-      <label class="radio-container">Option 3
-        <input type="radio" name="radio">
-        <span class="radio-mark"></span>
-      </label>
-      <label class="radio-container">Disabled option
-        <input type="radio" name="radio" disabled>
-        <span class="radio-mark"></span>
-      </label>
-      <h1 class="section-header" id="tables">Tables</h1>
-      <p>This is a table.</p>
-      <pre><code class="language-html">&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;Header&lt;/th&gt;
-      &lt;th&gt;Header&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Item&lt;/td&gt;
-      &lt;td&gt;Item&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Item&lt;/td&gt;
-      &lt;td&gt;Item&lt;/td&gt;
-    &lt;/tr&gt;
-      &lt;tr&gt;
-      &lt;td&gt;Item&lt;/td&gt;
-      &lt;td&gt;Item&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;</code></pre>
-      <table>
-		    <thead>
-      		<tr>
-      			<th>Header</th>
-      			<th>Header</th>
-      		</tr>
-      	</thead>
-      	<tbody>
-    			<tr>
-      			<td>Item</td>
-            <td>Item</td>
-      		</tr>
-          <tr>
-            <td>Item</td>
-            <td>Item</td>
-          </tr>
-          <tr>
-            <td>Item</td>
-            <td>Item</td>
-          </tr>
-      	</tbody>
-      </table>
-      <h1 class="section-header" id="cards">Cards</h1>
-      <p>Cards, built with flexbox! The flexbox will fit two cards per row, but you can change that by adding <code>flex: 0 1 &lt;percentage&gt;</code>, where the percentage is one divided by the number of cards you want per row minus 2-3% for the gap space of each card. Note that any cards extra will be displayed as the full, body width.</p>
-      <pre><code class="language-html">&lt;div class="card-container"&gt;
-  &lt;div class="card"&gt;
-    &lt;img src="https://firecss.hecker40.repl.co/image.jpg"/&gt;
-    &lt;h2 class="title"&gt;Card title&lt;/h2&gt;
-    &lt;p&gt;Content.&lt;/p&gt;
-  &lt;/div&gt;
-  &lt;div class="card"&gt;
-    &lt;img src="https://firecss.hecker40.repl.co/image.jpg"/&gt;
-    &lt;h2 class="title"&gt;Card title&lt;/h2&gt;
-    &lt;p&gt;Content.&lt;/p&gt;
-  &lt;/div&gt;
-  &lt;div class="card"&gt;
-    &lt;img src="https://firecss.hecker40.repl.co/image.jpg"/&gt;
-    &lt;h2 class="title"&gt;Card title&lt;/h2&gt;
-    &lt;p&gt;Content.&lt;/p&gt;
-  &lt;/div&gt;
-&lt;/div&gt;</code></pre>
-      <div class="card-container">
-        <div class="card">
-          <img src="https://firecss.hecker40.repl.co/image.jpg"/>
-          <h2 class="title">Card title</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nunc mi ipsum faucibus vitae aliquet. Odio eu feugiat pretium nibh ipsum. Aliquam eleifend mi in nulla posuere. A cras semper auctor neque vitae tempus quam.</p>
+
+      <div class="w3-row-padding w3-padding-32" style="margin:0 -16px">
+        <div class="w3-third w3-margin-bottom">
+          <img src="/w3images/newyork.jpg" alt="New York" style="width:100%" class="w3-hover-opacity">
+          <div class="w3-container w3-white">
+            <p><b>New York</b></p>
+            <p class="w3-opacity">Fri 27 Nov 2016</p>
+            <p>Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
+            <button class="w3-button w3-black w3-margin-bottom" onclick="document.getElementById('ticketModal').style.display='block'">Buy Tickets</button>
+          </div>
         </div>
-        <div class="card">
-          <img src="https://firecss.hecker40.repl.co/image.jpg"/>
-          <h2 class="title">Card title</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nunc mi ipsum faucibus vitae aliquet. Odio eu feugiat pretium nibh ipsum. Aliquam eleifend mi in nulla posuere. A cras semper auctor neque vitae tempus quam.</p>
+        <div class="w3-third w3-margin-bottom">
+          <img src="/w3images/paris.jpg" alt="Paris" style="width:100%" class="w3-hover-opacity">
+          <div class="w3-container w3-white">
+            <p><b>Paris</b></p>
+            <p class="w3-opacity">Sat 28 Nov 2016</p>
+            <p>Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
+            <button class="w3-button w3-black w3-margin-bottom" onclick="document.getElementById('ticketModal').style.display='block'">Buy Tickets</button>
+          </div>
         </div>
-        <div class="card">
-          <img src="https://firecss.hecker40.repl.co/image.jpg"/>
-          <h2 class="title">Card title</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nunc mi ipsum faucibus vitae aliquet. Odio eu feugiat pretium nibh ipsum. Aliquam eleifend mi in nulla posuere. A cras semper auctor neque vitae tempus quam.</p>
+        <div class="w3-third w3-margin-bottom">
+          <img src="/w3images/sanfran.jpg" alt="San Francisco" style="width:100%" class="w3-hover-opacity">
+          <div class="w3-container w3-white">
+            <p><b>San Francisco</b></p>
+            <p class="w3-opacity">Sun 29 Nov 2016</p>
+            <p>Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
+            <button class="w3-button w3-black w3-margin-bottom" onclick="document.getElementById('ticketModal').style.display='block'">Buy Tickets</button>
+          </div>
         </div>
       </div>
-      <h1 class="section-header" id="footer">Footers</h1>
-      <p>Check out the footer on this page!</p>
-      <pre><code class="language-html">&lt;div class="footer"&gt;&copy; 2022 &lt;a href="/"&gt;Name&lt;/a&gt;&lt;/div&gt;</code></pre>
-      <iframe src="https://firecss-footer-example.hecker40.repl.co/" height="300" width="100%"></iframe>
-      <h1 class="section-header" id="extra">Extra</h1>
-      <p>Some extra components here, in case your website ever needs them. As a side note, you can comment in the repl description, maybe I'll add your CSS feature and document it here. Lets start off with badges.</p>
-      <pre><code class="language-html">&lt;h2&gt;Text&lt;span class="badge"&gt;Badge&lt;/span&gt;&lt;/h2&gt;
-&lt;p&gt;Text&lt;span class="badge"&gt;Badge&lt;/span&gt;&lt;/p&gt;</code></pre>
-      <h2>fire.css<span class="badge">BETA</span></h2>
-      <p>fire.css<span class="badge">BETA</span></p>
-      <hr>
-      <p>A default alert.</p>
-      <pre><code class="language-html">&lt;span class="alert"&gt;Content&lt;/span&gt;</code></pre>
-      <span class="alert">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
-      <p>Added in v1.2.1, our toolkit now includes spinners. Go ahead and try them out real quick!</p>
-      <pre><code class="language-html">&lt;span class="spinner"&gt;&lt;span&gt;</code></pre>
-      <span class="spinner"></span>
-      <h1 class="section-header" id="faq">FAQ</h1>
-      <p>I've made a FAQ part to this CSS stylesheet in case you had any questions that you were wondering about. I'll answer the most common ones here.</p>
-      <hr>
-      <h2>Is this CSS stylesheet free?</h2>
-      <p>Yes, fire.css is an open-source project and is completely free.</p>
-      <hr>
-      <h2>Do I need to credit the author if I use this?</h2>
-      <p>Yes, it is preferred that you give credit to me if you use it, either in the website itself or in the repl description. Reading this CSS stylesheet's MIT License will probably clarify most of your questions.</p>
-      <hr>
-      <h2>Can I change the color scheme?</h2>
-      <p>Yes, you can. Fork the repl and open <code>fire.css</code> in your editor. You can then see the main variables in <code>:root</code> and change them, this will directly change the colors.</p>
-      <p>You can also open Inspect (<code>Ctrl Shift I</code>) and change the CSS from there. From there, you can directly edit the CSS colors and make it your own. An example is shown below.</p>
-      <img src="https://firecss.hecker40.repl.co/color-scheme.png"/>
-      <hr>
-      <h2>Can I see a demo of fire.css?</h2>
-      <p>Yes, you can click on <a href="https://firecss-demo.hecker40.repl.co">this link</a> for a demo of a website using fire.css.</p>
-      <hr>
-      <h2>What's special about fire.css?</h2>
-      <p>Most CSS stylesheets don't have a theme; all their components are plain and aren't considered "modern". This stylesheet uses a lively color scheme to make your website more catchy to users when they view it.</p>
-      <hr>
-      <h2>How can I help?</h2>
-      <p>You can help by going to the repl's cover page and leaving some feedback, all feedback is appreciated. You can also report a bug or anything else you think would make this a better stylesheet for websites to use. If you want, you can also help by sharing this to your friends and liking the repl, as it will definitely help more people if you do that.</p>
-      <hr>
-      <p>Hope you all found this useful!</p>
-    </main>
-    <div class="footer">&copy; 2022 <a href="https://replit.com/@hecker40" target="_blank">@hecker40</a></div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
-    <script src="https://firecss.hecker40.repl.co/fire.js"></script>
-    <script src="https://firecss.hecker40.repl.co/site.js"></script>
-  </body>
+    </div>
+  </div>
+
+  <!-- Ticket Modal -->
+  <div id="ticketModal" class="w3-modal">
+    <div class="w3-modal-content w3-animate-top w3-card-4">
+      <header class="w3-container w3-teal w3-center w3-padding-32"> 
+        <span onclick="document.getElementById('ticketModal').style.display='none'" 
+       class="w3-button w3-teal w3-xlarge w3-display-topright">×</span>
+        <h2 class="w3-wide"><i class="fa fa-suitcase w3-margin-right"></i>Tickets</h2>
+      </header>
+      <div class="w3-container">
+        <p><label><i class="fa fa-shopping-cart"></i> Tickets, $15 per person</label></p>
+        <input class="w3-input w3-border" type="text" placeholder="How many?">
+        <p><label><i class="fa fa-user"></i> Send To</label></p>
+        <input class="w3-input w3-border" type="text" placeholder="Enter email">
+        <button class="w3-button w3-block w3-teal w3-padding-16 w3-section w3-right">PAY <i class="fa fa-check"></i></button>
+        <button class="w3-button w3-red w3-section" onclick="document.getElementById('ticketModal').style.display='none'">Close <i class="fa fa-remove"></i></button>
+        <p class="w3-right">Need <a href="#" class="w3-text-blue">help?</a></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- The Contact Section -->
+  <div class="w3-container w3-content w3-padding-64" style="max-width:800px" id="contact">
+    <h2 class="w3-wide w3-center">CONTACT</h2>
+    <p class="w3-opacity w3-center"><i>Fan? Drop a note!</i></p>
+    <div class="w3-row w3-padding-32">
+      <div class="w3-col m6 w3-large w3-margin-bottom">
+        <i class="fa fa-map-marker" style="width:30px"></i> Chicago, US<br>
+        <i class="fa fa-phone" style="width:30px"></i> Phone: +00 151515<br>
+        <i class="fa fa-envelope" style="width:30px"> </i> Email: mail@mail.com<br>
+      </div>
+      <div class="w3-col m6">
+        <form action="/action_page.php" target="_blank">
+          <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
+            <div class="w3-half">
+              <input class="w3-input w3-border" type="text" placeholder="Name" required name="Name">
+            </div>
+            <div class="w3-half">
+              <input class="w3-input w3-border" type="text" placeholder="Email" required name="Email">
+            </div>
+          </div>
+          <input class="w3-input w3-border" type="text" placeholder="Message" required name="Message">
+          <button class="w3-button w3-black w3-section w3-right" type="submit">SEND</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  
+<!-- End Page Content -->
+</div>
+
+<!-- Image of location/map -->
+<img src="/w3images/map.jpg" class="w3-image w3-greyscale-min" style="width:100%">
+
+<!-- Footer -->
+<footer class="w3-container w3-padding-64 w3-center w3-opacity w3-light-grey w3-xlarge">
+  <i class="fa fa-facebook-official w3-hover-opacity"></i>
+  <i class="fa fa-instagram w3-hover-opacity"></i>
+  <i class="fa fa-snapchat w3-hover-opacity"></i>
+  <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+  <i class="fa fa-twitter w3-hover-opacity"></i>
+  <i class="fa fa-linkedin w3-hover-opacity"></i>
+  <p class="w3-medium">Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+</footer>
+
+<script>
+// Automatic Slideshow - change image every 4 seconds
+var myIndex = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}    
+  x[myIndex-1].style.display = "block";  
+  setTimeout(carousel, 4000);    
+}
+
+// Used to toggle the menu on small screens when clicking on the menu button
+function myFunction() {
+  var x = document.getElementById("navDemo");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else { 
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+
+// When the user clicks anywhere outside of the modal, close it
+var modal = document.getElementById('ticketModal');
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
+
+</body>
 </html>
