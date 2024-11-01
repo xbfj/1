@@ -40,11 +40,19 @@ The game is also on github at Dddatt/bss and also on Replit
 
   
 <html>
-<iframe src="dio.mp3" type="audio/mp3" allow="autoplay" id="audio" style="display:none"></iframe>
+<body>
+    <audio id="myAudio" src="dio.mp3"></audio>
 
-<audio autoplay>
-  <source src="dio.mp3" type="audio/mp3">
-</audio>
+    <script>
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Tab') {
+                event.preventDefault(); // Prevent the default tab behavior
+                var audio = document.getElementById('myAudio');
+                audio.play();
+            }
+        });
+    </script>
+</body>
     <head>
         <meta charset='utf-8'>
         <title>bssr</title>
