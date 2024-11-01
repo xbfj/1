@@ -37,16 +37,17 @@ The game is also on github at Dddatt/bss and also on Replit
 
 -->
 
-<audio controls autoplay>
-    <source src="dio.mp3" type="audio/mpeg">
-    Your browser does not support the audio element.
-  </audio>
+
   
 <html>
+<iframe src="dio.mp3" type="audio/mp3" allow="autoplay" id="audio" style="display:none"></iframe>
 
+<audio autoplay>
+  <source src="dio.mp3" type="audio/mp3">
+</audio>
     <head>
         <meta charset='utf-8'>
-        <title>Bee Swarm Simulator</title>
+        <title>bssr</title>
     </head>
     <body onload='main()'>
 <canvas id='gl-canvas'></canvas>
