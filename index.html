@@ -36,34 +36,60 @@
             text-align: center;
         }
         .container {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
             padding: 20px;
         }
         .heading {
             color: #9370DB; /* Medium Purple */
-            font-size: 24px;
-            margin-bottom: 20px;
+            font-size: 32px;
+            margin-bottom: 10px;
             text-align: center;
         }
         .sub-heading {
             font-size: 18px;
             color: #D8BFD8; /* Thistle */
-            margin-bottom: 30px;
+            margin-bottom: 40px;
             text-align: center;
         }
-        .links {
+        .section {
+            margin-bottom: 40px;
+            padding: 25px;
+            background-color: #1a1a1a;
+            border-radius: 12px;
+            border: 2px solid #9370DB;
+        }
+        .section-heading {
+            color: #9370DB;
+            font-size: 22px;
+            margin-bottom: 20px;
             text-align: center;
+            border-bottom: 2px solid #9370DB;
+            padding-bottom: 10px;
+        }
+        .links {
+            text-align: left;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 12px;
         }
         .links a {
             color: #D8BFD8; /* Thistle */
             text-decoration: none;
-            margin-bottom: 10px;
+            padding: 12px 15px;
             display: block;
-            font-size: 18px;
+            font-size: 16px;
+            background-color: #2a2a2a;
+            border-radius: 8px;
+            border: 1px solid #4a4a4a;
+            transition: all 0.3s ease;
         }
         .links a:hover {
             color: #E6E6FA; /* Lavender */
+            background-color: #3a3a3a;
+            border-color: #9370DB;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(147, 112, 219, 0.3);
         }
         .footer {
             text-align: center;
@@ -82,12 +108,57 @@
 
     <div class="container">
         <h1 class="heading">platinum cards</h1>
-        <p class="sub-heading"></p>
-        <div class="links">
-            <a href="https://xbfj.github.io/2.html">robux</a>
-            <a href="https://xbfj.github.io/1/bss.html">bee swarm simulator</a>
-            <a href="https://xbfj.github.io/1/4.html">extra stuff</a>
+        <p class="sub-heading">Your hub for games, tools, and resources</p>
+        
+        <div class="section">
+            <h2 class="section-heading">🎮 Games & Entertainment</h2>
+            <div class="links">
+                <a href="2.html">🎁 Robux Generator</a>
+                <a href="bss.html">🐝 Bee Swarm Simulator</a>
+                <a href="1/minecraft.html">⛏️ Minecraft</a>
+                <a href="1/uno.html">🎴 UNO</a>
+                <a href="1/chest.html">♟️ Chess</a>
+                <a href="1/fig.html">🥊 Fight Game</a>
+                <a href="roadblocks.html">🎮 Fake Roblox Raytrace</a>
+                <a href="1/ablungus.html">🎲 Ablungus</a>
+                <a href="1/hangout.html">💬 Hangout</a>
+            </div>
         </div>
+
+        <div class="section">
+            <h2 class="section-heading">🛠️ Tools & Utilities</h2>
+            <div class="links">
+                <a href="1/bing.html">🔍 Microsoft Rewards Farming</a>
+                <a href="1/test.html">🧪 Test Page</a>
+                <a href="1/form.html">📝 Form</a>
+                <a href="1/tea.html">🍵 Tea Page</a>
+                <a href="1/learn.html">📚 Learn</a>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-heading">📂 Resources & Files</h2>
+            <div class="links">
+                <a href="resources.html">📚 View All Resources</a>
+                <a href="4.html">📦 Extra Stuff Collection</a>
+                <a href="1/links.txt">🔗 Working Links (Interstellar)</a>
+                <a href="1/proxies.txt">🌐 HTTP Proxies</a>
+                <a href="1/usernames.txt">👤 Usernames</a>
+                <a href="g.mp4">🎬 Keydrick Video</a>
+                <a href="1/ye.gif">💇 Haircut GIF</a>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-heading">🎨 Media & Images</h2>
+            <div class="links">
+                <a href="jig.jpg">🖼️ Jig Image</a>
+                <a href="poggers.gif">😎 Poggers GIF</a>
+                <a href="pride.png">🏳️‍🌈 Pride Image</a>
+                <a href="goku.png">🥋 Goku Image</a>
+            </div>
+        </div>
+        
         <div class="footer">they didnt believe in us</div>
     </div>
 
