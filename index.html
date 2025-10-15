@@ -316,6 +316,7 @@
         const CONNECTION_DISTANCE = 100;
         const MOUSE_INTERACTION_RADIUS = 150;
         const MOUSE_FORCE = 0.00001;
+        const MAX_CONNECTIONS_PER_PARTICLE = 3;
         
         // Particle system
         class Particle {
@@ -402,10 +403,9 @@
             ctx.strokeStyle = 'rgba(147, 112, 219, 0.1)';
             ctx.lineWidth = 1;
             
-            const maxConnectionsPerParticle = 3;
             for (let i = 0; i < particles.length; i++) {
                 let connections = 0;
-                for (let j = i + 1; j < particles.length && connections < maxConnectionsPerParticle; j++) {
+                for (let j = i + 1; j < particles.length && connections < MAX_CONNECTIONS_PER_PARTICLE; j++) {
                     const dx = particles[i].x - particles[j].x;
                     const dy = particles[i].y - particles[j].y;
                     const distance = Math.sqrt(dx * dx + dy * dy);
