@@ -311,6 +311,12 @@
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
         
+        // Configuration constants
+        const PARTICLE_COUNT = 80;
+        const CONNECTION_DISTANCE = 100;
+        const MOUSE_INTERACTION_RADIUS = 150;
+        const MOUSE_FORCE = 0.00001;
+        
         // Particle system
         class Particle {
             constructor() {
@@ -344,7 +350,7 @@
         
         // Create particles
         const particles = [];
-        for (let i = 0; i < 150; i++) {
+        for (let i = 0; i < PARTICLE_COUNT; i++) {
             particles.push(new Particle());
         }
         
@@ -392,21 +398,24 @@
                 particle.draw();
             });
             
-            // Draw connections between nearby particles
+            // Draw connections between nearby particles (optimized with max connections)
             ctx.strokeStyle = 'rgba(147, 112, 219, 0.1)';
             ctx.lineWidth = 1;
             
+            const maxConnectionsPerParticle = 3;
             for (let i = 0; i < particles.length; i++) {
-                for (let j = i + 1; j < particles.length; j++) {
+                let connections = 0;
+                for (let j = i + 1; j < particles.length && connections < maxConnectionsPerParticle; j++) {
                     const dx = particles[i].x - particles[j].x;
                     const dy = particles[i].y - particles[j].y;
                     const distance = Math.sqrt(dx * dx + dy * dy);
                     
-                    if (distance < 100) {
+                    if (distance < CONNECTION_DISTANCE) {
                         ctx.beginPath();
                         ctx.moveTo(particles[i].x, particles[i].y);
                         ctx.lineTo(particles[j].x, particles[j].y);
                         ctx.stroke();
+                        connections++;
                     }
                 }
                 
@@ -415,9 +424,9 @@
                 const dy = particles[i].y - mouseY;
                 const distance = Math.sqrt(dx * dx + dy * dy);
                 
-                if (distance < 150) {
-                    particles[i].vx += dx * 0.00001;
-                    particles[i].vy += dy * 0.00001;
+                if (distance < MOUSE_INTERACTION_RADIUS) {
+                    particles[i].vx += dx * MOUSE_FORCE;
+                    particles[i].vy += dy * MOUSE_FORCE;
                 }
             }
             
