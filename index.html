@@ -13,163 +13,429 @@
     <meta name="twitter:card" content="summary_large_image">
     <link rel="icon" href="data:image/x-icon;base64,AAABAAEAEBAAAAEACABoBQAAFgAAACgAAAAQAAAAIAAAAAEACAAAAAAAAAEAAAAAAAAAAAAAAAEAAAAAAAAAAAAA4tTCAMa3nQDo4dAA9PPvAOHKtADIs5cAz8GqANHBqgBRmO8A5NnLANzWwwDaxakA3c+9AOXc0gDv6NUA5vD6AMWykQD059cAzMCkADOI6wAUeOgAfrXyANPFrgBmpe8A8uviAJ/H9wDFsJQAerj/AOHXxgDv5M4Aca3zANC+pwBop/EAjrr1ANC9ogC01fYA6eHaAM7AqQCUwPYA6+bdANHErgDc078A1cq2ANvMuQDe6vwA1MOpAMu/owDx7+UA49fLANrNvQDSxasA9O7nANfMuADe1MMA5uPUAKvW/wDy8ecA5uDTAB186gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAANg01MjEKMSwuMysAAAAAABsGJQoIIykdNBk6AAAAAAAAAAAqJgcvDgAAAAAAAAAAAAAwFwo6MQEANCgAAAAAAAA0FwIrNQUMOQAICwAAAAAAFxE3Eh4DDygAIBMAAAAAAAAAADgcOBwABAMAAAAAAAAAABwnLTsfAAAAAAAAAAAAAAAWIRAVHBwAAAAAAAAAAAAAABQnGhwAAAAAAAAAAAAAAAAACSIcOAAAAAAAAAAAAAAAAAAYJAAAAAAAAAAAAAAAAAAAABYAAAAAAAAAAAAAAAAAAAAAHAAAAAAAAAAAAAAAAAAAAAAAAAAAAP//AADABwAAwAcAAPg/AADwJwAA4BMAAOATAAD8JwAA+D8AAPgfAAD8PwAA/h8AAP8/AAD/vwAA/98AAP//AAA=" type="image/x-icon">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3808073597507249"
-     crossorigin="anonymous"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3808073597507249" crossorigin="anonymous"></script>
     <style>
-        body {
-            font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-            background-color: #000000; 
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
         }
+        
+        body {
+            font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            background-color: #000000;
+            overflow-x: hidden;
+            color: #E6E6FA;
+        }
+        
+        #canvas-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+        
+        #content {
+            position: relative;
+            z-index: 2;
+        }
+        
         #AlertBar {
-            background-color: #7A1BDA; /* purpl */
-            color: #E6E6FA; /* ligh putpl */
+            background-color: rgba(122, 27, 218, 0.9);
+            color: #E6E6FA;
             padding: 10px;
             text-align: center;
+            backdrop-filter: blur(10px);
         }
-        #TopBar {
-            background-color: #800080; /* purpl */
-            color: #E6E6FA; /* light purpl */
-            padding: 10px;
+        
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             text-align: center;
-        }
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
             padding: 20px;
         }
-        .heading {
-            color: #9370DB; /* sahde of purpl */
-            font-size: 32px;
-            margin-bottom: 10px;
-            text-align: center;
-        }
-        .sub-heading {
-            font-size: 18px;
-            color: #D8BFD8; /* like green or whatever */
-            margin-bottom: 40px;
-            text-align: center;
-        }
-        .section {
-            margin-bottom: 40px;
-            padding: 25px;
-            background-color: #1a1a1a;
-            border-radius: 12px;
-            border: 2px solid #9370DB;
-        }
-        .section-heading {
+        
+        .hero h1 {
+            font-size: 4rem;
             color: #9370DB;
-            font-size: 22px;
+            margin-bottom: 20px;
+            text-shadow: 0 0 20px rgba(147, 112, 219, 0.5);
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+        
+        .hero p {
+            font-size: 1.5rem;
+            color: #D8BFD8;
+            margin-bottom: 40px;
+        }
+        
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 20px rgba(147, 112, 219, 0.5);
+            }
+            to {
+                text-shadow: 0 0 40px rgba(147, 112, 219, 0.8);
+            }
+        }
+        
+        .scroll-indicator {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #9370DB;
+            font-size: 2rem;
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateX(-50%) translateY(0);
+            }
+            40% {
+                transform: translateX(-50%) translateY(-20px);
+            }
+            60% {
+                transform: translateX(-50%) translateY(-10px);
+            }
+        }
+        
+        .sections-container {
+            position: relative;
+            background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.8));
+            padding: 60px 20px;
+            min-height: 100vh;
+        }
+        
+        .nav-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            padding: 20px;
+        }
+        
+        .nav-card {
+            background: rgba(26, 26, 26, 0.8);
+            border: 2px solid #9370DB;
+            border-radius: 15px;
+            padding: 30px;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .nav-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(147, 112, 219, 0.3), transparent);
+            transition: left 0.5s;
+        }
+        
+        .nav-card:hover::before {
+            left: 100%;
+        }
+        
+        .nav-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 10px 30px rgba(147, 112, 219, 0.5);
+            border-color: #E6E6FA;
+        }
+        
+        .nav-card h2 {
+            color: #9370DB;
+            font-size: 1.8rem;
             margin-bottom: 20px;
             text-align: center;
             border-bottom: 2px solid #9370DB;
-            padding-bottom: 10px;
+            padding-bottom: 15px;
         }
-        .links {
-            text-align: left;
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        
+        .nav-card .links {
+            display: flex;
+            flex-direction: column;
             gap: 12px;
         }
-        .links a {
-            color: #D8BFD8; /* Thistle */
+        
+        .nav-card a {
+            color: #D8BFD8;
             text-decoration: none;
             padding: 12px 15px;
-            display: block;
-            font-size: 16px;
-            background-color: #2a2a2a;
+            background-color: rgba(42, 42, 42, 0.6);
             border-radius: 8px;
             border: 1px solid #4a4a4a;
             transition: all 0.3s ease;
+            display: block;
         }
-        .links a:hover {
-            color: #E6E6FA; /* Lavender */
-            background-color: #3a3a3a;
+        
+        .nav-card a:hover {
+            color: #E6E6FA;
+            background-color: rgba(58, 58, 58, 0.8);
             border-color: #9370DB;
-            transform: translateY(-2px);
+            transform: translateX(5px);
             box-shadow: 0 4px 8px rgba(147, 112, 219, 0.3);
         }
+        
         .footer {
             text-align: center;
-            margin-top: 50px;
-            color: #D8BFD8; /* Thistle */
+            padding: 40px 20px;
+            color: #D8BFD8;
             font-size: 14px;
+            background: rgba(0, 0, 0, 0.9);
+            border-top: 2px solid #9370DB;
+        }
+        
+        .footer a {
+            color: #9370DB;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer a:hover {
+            color: #E6E6FA;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.2rem;
+            }
+            
+            .nav-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
-    <div id="AlertBar">
-        hello one person
+    <div id="canvas-container"></div>
+    
+    <div id="content">
+        <div id="AlertBar">
+            hello one person
+        </div>
+        
+        <div class="hero">
+            <h1>platinum cards</h1>
+            <p>my hub for games some tools and resources</p>
+            <div class="scroll-indicator">↓</div>
+        </div>
+        
+        <div class="sections-container">
+            <div class="nav-grid">
+                <div class="nav-card">
+                    <h2>🎮 Games & Entertainment</h2>
+                    <div class="links">
+                        <a href="2.html">Robux Generator</a>
+                        <a href="bss.html">Bee Swarm Simulator</a>
+                        <a href="1/minecraft.html">Minecraft</a>
+                        <a href="1/uno.html">UNO</a>
+                        <a href="1/chest.html">Chess</a>
+                        <a href="1/fig.html">Fight Game</a>
+                        <a href="roadblocks.html">Fake Roblox</a>
+                        <a href="1/ablungus.html">Ablungus</a>
+                        <a href="1/hangout.html">Hangout</a>
+                    </div>
+                </div>
+                
+                <div class="nav-card">
+                    <h2>🛠️ Tools & Utilities</h2>
+                    <div class="links">
+                        <a href="1/bing.html">Microsoft Rewards Farming</a>
+                        <a href="1/test.html">Test Page</a>
+                        <a href="1/form.html">Form</a>
+                        <a href="1/tea.html">Tea Page</a>
+                        <a href="1/learn.html">Learn</a>
+                    </div>
+                </div>
+                
+                <div class="nav-card">
+                    <h2>📚 Resources & Files</h2>
+                    <div class="links">
+                        <a href="resources.html">View All Resources</a>
+                        <a href="4.html">Extra Stuff Collection</a>
+                        <a href="1/proxies.txt">HTTP Proxies</a>
+                        <a href="1/usernames.txt">Usernames</a>
+                        <a href="g.mp4">Keydrick Video</a>
+                        <a href="1/ye.gif">Haircut GIF</a>
+                    </div>
+                </div>
+                
+                <div class="nav-card">
+                    <h2>🖼️ Media & Images</h2>
+                    <div class="links">
+                        <a href="jig.jpg">Image</a>
+                        <a href="poggers.gif">Poggers GIF</a>
+                        <a href="pride.png">Pride Image</a>
+                        <a href="goku.png">Goku Image</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>they didnt believe in us</p>
+            <p style="margin-top: 20px;">Contact Information:</p>
+            <p>
+                <a href="https://www.facebook.com/profile.php?id=61d556018145714">Facebook</a> |
+                <a href="https://www.instagram.com/davescab590/">Instagram</a> |
+                <a href="https://www.linkedin.com/in/2-5-9942d7a2a1/">LinkedIn</a> |
+                <a href="https://www.youtube.com/@tschernocbyl1">YouTube</a> |
+                <a href="https://twitter.com/yessusd981537">Twitter</a>
+            </p>
+            <p>Phone: 588-768-9392</p>
+        </div>
     </div>
     
-    </div>
-
-    <div class="container">
-        <h1 class="heading">platinum cards</h1>
-        <p class="sub-heading">my hub for games some tools and resources</p>
+    <script>
+        // Canvas-based animated background
+        const canvas = document.createElement('canvas');
+        const ctx = canvas.getContext('2d');
+        document.getElementById('canvas-container').appendChild(canvas);
         
-        <div class="section">
-            <h2 class="section-heading"> games & entertainment</h2>
-            <div class="links">
-                <a href="2.html"> robux generator</a>
-                <a href="bss.html"> bee Swarm Simulator</a>
-                <a href="1/minecraft.html"> minecraft</a>
-                <a href="1/uno.html"> UNO</a>
-                <a href="1/chest.html"> chess</a>
-                <a href="1/fig.html"> fight Game</a>
-                <a href="roadblocks.html"> fake roblox</a>
-                <a href="1/ablungus.html"> ablungus</a>
-                <a href="1/hangout.html"> hangout</a>
-            </div>
-        </div>
-
-        <div class="section">
-            <h2 class="section-heading"> Tools & Utilities</h2>
-            <div class="links">
-                <a href="1/bing.html"> Microsoft Rewards Farming</a>
-                <a href="1/test.html"> Test Page</a>
-                <a href="1/form.html"> Form</a>
-                <a href="1/tea.html"> Tea Page</a>
-                <a href="1/learn.html"> Learn</a>
-            </div>
-        </div>
-
-        <div class="section">
-            <h2 class="section-heading"> Resources & Files</h2>
-            <div class="links">
-                <a href="resources.html"> View All Resources</a>
-                <a href="4.html"> Extra Stuff Collection</a>
-                <a href="1/proxies.txt"> HTTP Proxies</a>
-                <a href="1/usernames.txt"> Usernames</a>
-                <a href="g.mp4"> Keydrick Video</a>
-                <a href="1/ye.gif"> Haircut GIF</a>
-            </div>
-        </div>
-
-        <div class="section">
-            <h2 class="section-heading"> Media & Images</h2>
-            <div class="links">
-                <a href="jig.jpg"> image</a>
-                <a href="poggers.gif"> poggers gif/a>
-                <a href="pride.png"> pride image</a>
-                <a href="goku.png"> goku image</a>
-            </div>
-        </div>
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
         
-        <div class="footer">they didnt believe in us</div>
-    </div>
-
-    <div class="footer">
-        <p>Contact Information:</p>
-        <p>
-            <a href="https://www.facebook.com/profile.php?id=61d556018145714">Facebook</a> |
-            <a href="https://www.instagram.com/davescab590/">Instagram</a> |
-            <a href="https://www.linkedin.com/in/2-5-9942d7a2a1/">LinkedIn</a> |
-            <a href="https://www.youtube.com/@tschernocbyl1">YouTube</a> |
-            <a href="https://twitter.com/yessusd981537">Twitter</a>
-        </p>
-        <p>Phone: 588-768-9392</p>
-    </div>
+        // Particle system
+        class Particle {
+            constructor() {
+                this.reset();
+            }
+            
+            reset() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.vx = (Math.random() - 0.5) * 0.5;
+                this.vy = (Math.random() - 0.5) * 0.5;
+                this.radius = Math.random() * 2 + 1;
+                this.opacity = Math.random() * 0.5 + 0.3;
+            }
+            
+            update() {
+                this.x += this.vx;
+                this.y += this.vy;
+                
+                if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
+                if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
+            }
+            
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+                ctx.fillStyle = `rgba(147, 112, 219, ${this.opacity})`;
+                ctx.fill();
+            }
+        }
+        
+        // Create particles
+        const particles = [];
+        for (let i = 0; i < 150; i++) {
+            particles.push(new Particle());
+        }
+        
+        // Animated waves
+        let waveOffset = 0;
+        
+        function drawWaves() {
+            ctx.strokeStyle = 'rgba(147, 112, 219, 0.1)';
+            ctx.lineWidth = 2;
+            
+            for (let i = 0; i < 3; i++) {
+                ctx.beginPath();
+                for (let x = 0; x < canvas.width; x += 5) {
+                    const y = canvas.height / 2 + Math.sin((x + waveOffset) * 0.01 + i) * 50 * (i + 1);
+                    if (x === 0) {
+                        ctx.moveTo(x, y);
+                    } else {
+                        ctx.lineTo(x, y);
+                    }
+                }
+                ctx.stroke();
+            }
+            waveOffset += 1;
+        }
+        
+        // Mouse interaction
+        let mouseX = canvas.width / 2;
+        let mouseY = canvas.height / 2;
+        
+        canvas.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+        });
+        
+        // Animation loop
+        function animate() {
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.1)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            
+            drawWaves();
+            
+            // Draw particles
+            particles.forEach(particle => {
+                particle.update();
+                particle.draw();
+            });
+            
+            // Draw connections between nearby particles
+            ctx.strokeStyle = 'rgba(147, 112, 219, 0.1)';
+            ctx.lineWidth = 1;
+            
+            for (let i = 0; i < particles.length; i++) {
+                for (let j = i + 1; j < particles.length; j++) {
+                    const dx = particles[i].x - particles[j].x;
+                    const dy = particles[i].y - particles[j].y;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
+                    
+                    if (distance < 100) {
+                        ctx.beginPath();
+                        ctx.moveTo(particles[i].x, particles[i].y);
+                        ctx.lineTo(particles[j].x, particles[j].y);
+                        ctx.stroke();
+                    }
+                }
+                
+                // Mouse interaction
+                const dx = particles[i].x - mouseX;
+                const dy = particles[i].y - mouseY;
+                const distance = Math.sqrt(dx * dx + dy * dy);
+                
+                if (distance < 150) {
+                    particles[i].vx += dx * 0.00001;
+                    particles[i].vy += dy * 0.00001;
+                }
+            }
+            
+            requestAnimationFrame(animate);
+        }
+        
+        animate();
+        
+        // Handle window resize
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
+        
+        // Smooth scroll
+        document.querySelector('.scroll-indicator').addEventListener('click', () => {
+            document.querySelector('.sections-container').scrollIntoView({ behavior: 'smooth' });
+        });
+    </script>
 </body>
 </html>
