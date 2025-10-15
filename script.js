@@ -30,8 +30,8 @@ await (async function () {
       "url(https://fonts.gstatic.com/s/librebarcode128text/v29/fdNv9tubt3ZEnz1Gu3I4-zppwZ9CWZ16Z0w5QVrS6Q.woff2) format('woff2')"
     )
   ];
-  for (let font in fonts) {
-    await loadFont(fonts[font]);
+  for (let font of fonts) {
+    await loadFont(font);
   }
 })();
 
@@ -369,6 +369,10 @@ const renderer = new THREE.WebGLRenderer({ antialias: true });
 renderer.setPixelRatio(devicePixelRatio);
 renderer.setSize(innerWidth * dpr, innerHeight * dpr);
 document.body.appendChild(renderer.domElement);
+
+const btnClose = document.getElementById('btnClose');
+const container = document.getElementById('container');
+const text = document.getElementById('text');
 
 window.addEventListener("resize", (event) => {
   camera.aspect = innerWidth / innerHeight;
