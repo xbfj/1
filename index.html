@@ -13,163 +13,317 @@
     <meta name="twitter:card" content="summary_large_image">
     <link rel="icon" href="data:image/x-icon;base64,AAABAAEAEBAAAAEACABoBQAAFgAAACgAAAAQAAAAIAAAAAEACAAAAAAAAAEAAAAAAAAAAAAAAAEAAAAAAAAAAAAA4tTCAMa3nQDo4dAA9PPvAOHKtADIs5cAz8GqANHBqgBRmO8A5NnLANzWwwDaxakA3c+9AOXc0gDv6NUA5vD6AMWykQD059cAzMCkADOI6wAUeOgAfrXyANPFrgBmpe8A8uviAJ/H9wDFsJQAerj/AOHXxgDv5M4Aca3zANC+pwBop/EAjrr1ANC9ogC01fYA6eHaAM7AqQCUwPYA6+bdANHErgDc078A1cq2ANvMuQDe6vwA1MOpAMu/owDx7+UA49fLANrNvQDSxasA9O7nANfMuADe1MMA5uPUAKvW/wDy8ecA5uDTAB186gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAANg01MjEKMSwuMysAAAAAABsGJQoIIykdNBk6AAAAAAAAAAAqJgcvDgAAAAAAAAAAAAAwFwo6MQEANCgAAAAAAAA0FwIrNQUMOQAICwAAAAAAFxE3Eh4DDygAIBMAAAAAAAAAADgcOBwABAMAAAAAAAAAABwnLTsfAAAAAAAAAAAAAAAWIRAVHBwAAAAAAAAAAAAAABQnGhwAAAAAAAAAAAAAAAAACSIcOAAAAAAAAAAAAAAAAAAYJAAAAAAAAAAAAAAAAAAAABYAAAAAAAAAAAAAAAAAAAAAHAAAAAAAAAAAAAAAAAAAAAAAAAAAAP//AADABwAAwAcAAPg/AADwJwAA4BMAAOATAAD8JwAA+D8AAPgfAAD8PwAA/h8AAP8/AAD/vwAA/98AAP//AAA=" type="image/x-icon">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3808073597507249"
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3808073597507249"
      crossorigin="anonymous"></script>
     <style>
-        body {
-            font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-            background-color: #000000; 
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
         }
-        #AlertBar {
-            background-color: #7A1BDA; /* purpl */
-            color: #E6E6FA; /* ligh putpl */
-            padding: 10px;
+        
+        body {
+            font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            background: radial-gradient(ellipse at center, #1a0033 0%, #000000 70%);
+            background-attachment: fixed;
+            overflow: hidden;
+            color: #E6E6FA;
+            position: relative;
+        }
+        
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(147, 112, 219, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(230, 230, 250, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+            animation: bgPulse 10s ease-in-out infinite;
+        }
+        
+        @keyframes bgPulse {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+        
+        #container {
+            width: 100%;
+            height: 100vh;
+            position: relative;
+        }
+        
+        #info {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
             text-align: center;
+            z-index: 100;
+            pointer-events: none;
         }
-        #TopBar {
-            background-color: #800080; /* purpl */
-            color: #E6E6FA; /* light purpl */
-            padding: 10px;
-            text-align: center;
-        }
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        .heading {
-            color: #9370DB; /* sahde of purpl */
-            font-size: 32px;
-            margin-bottom: 10px;
-            text-align: center;
-        }
-        .sub-heading {
-            font-size: 18px;
-            color: #D8BFD8; /* like green or whatever */
-            margin-bottom: 40px;
-            text-align: center;
-        }
-        .section {
-            margin-bottom: 40px;
-            padding: 25px;
-            background-color: #1a1a1a;
-            border-radius: 12px;
-            border: 2px solid #9370DB;
-        }
-        .section-heading {
+        
+        #info h1 {
             color: #9370DB;
-            font-size: 22px;
-            margin-bottom: 20px;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 0 0 20px rgba(147, 112, 219, 0.8);
+        }
+        
+        #info p {
+            color: #D8BFD8;
+            font-size: 1.2em;
+        }
+        
+        .card {
+            position: absolute;
+            background: rgba(26, 26, 26, 0.95);
+            border: 2px solid #9370DB;
+            border-radius: 15px;
+            padding: 20px;
+            min-width: 250px;
+            max-width: 350px;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(147, 112, 219, 0.2);
+            opacity: 0;
+        }
+        
+        .card:hover {
+            transform: scale(1.08) translateY(-10px) !important;
+            box-shadow: 0 15px 50px rgba(147, 112, 219, 0.5), 0 0 40px rgba(147, 112, 219, 0.3);
+            border-color: #E6E6FA;
+            background: rgba(42, 26, 60, 0.95);
+        }
+        
+        .card h2 {
+            color: #9370DB;
+            font-size: 1.5em;
+            margin-bottom: 15px;
             text-align: center;
-            border-bottom: 2px solid #9370DB;
-            padding-bottom: 10px;
         }
-        .links {
-            text-align: left;
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 12px;
+        
+        .card .links {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
         }
-        .links a {
-            color: #D8BFD8; /* Thistle */
+        
+        .card .links a {
+            color: #D8BFD8;
             text-decoration: none;
-            padding: 12px 15px;
-            display: block;
-            font-size: 16px;
-            background-color: #2a2a2a;
-            border-radius: 8px;
+            padding: 8px 12px;
+            background-color: rgba(42, 42, 42, 0.8);
+            border-radius: 5px;
             border: 1px solid #4a4a4a;
-            transition: all 0.3s ease;
+            transition: all 0.2s ease;
+            pointer-events: auto;
         }
-        .links a:hover {
-            color: #E6E6FA; /* Lavender */
-            background-color: #3a3a3a;
+        
+        .card .links a:hover {
+            color: #E6E6FA;
+            background-color: rgba(58, 58, 58, 0.9);
             border-color: #9370DB;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(147, 112, 219, 0.3);
+            transform: translateX(8px);
+            box-shadow: 0 4px 15px rgba(147, 112, 219, 0.4);
         }
-        .footer {
+        
+        #instructions {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
             text-align: center;
-            margin-top: 50px;
-            color: #D8BFD8; /* Thistle */
-            font-size: 14px;
+            color: #D8BFD8;
+            font-size: 0.9em;
+            z-index: 100;
+            pointer-events: none;
+        }
+        
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px) translateX(0px);
+            }
+            25% {
+                transform: translateY(-20px) translateX(10px);
+            }
+            50% {
+                transform: translateY(-10px) translateX(-10px);
+            }
+            75% {
+                transform: translateY(-15px) translateX(5px);
+            }
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(50px) scale(0.8) rotateX(20deg);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1) rotateX(0deg);
+            }
+        }
+        
+        .alert-bar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: #7A1BDA;
+            color: #E6E6FA;
+            padding: 10px;
+            text-align: center;
+            z-index: 1000;
+        }
+        
+        canvas {
+            display: block;
+        }
+        
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
         }
     </style>
 </head>
 <body>
-    <div id="AlertBar">
-        hello one person
+    <div class="alert-bar">hello one person</div>
+    
+    <div id="container"></div>
+    
+    <div id="info">
+        <h1>platinum cards</h1>
+        <p>my hub for games some tools and resources</p>
     </div>
     
+    <div id="instructions">
+        Hover over cards to interact • Click links to navigate
     </div>
-
-    <div class="container">
-        <h1 class="heading">platinum cards</h1>
-        <p class="sub-heading">my hub for games some tools and resources</p>
+    
+    <script>
+        // Create animated background
+        const container = document.getElementById('container');
         
-        <div class="section">
-            <h2 class="section-heading"> games & entertainment</h2>
-            <div class="links">
-                <a href="2.html"> robux generator</a>
-                <a href="bss.html"> bee Swarm Simulator</a>
-                <a href="1/minecraft.html"> minecraft</a>
-                <a href="1/uno.html"> UNO</a>
-                <a href="1/chest.html"> chess</a>
-                <a href="1/fig.html"> fight Game</a>
-                <a href="roadblocks.html"> fake roblox</a>
-                <a href="1/ablungus.html"> ablungus</a>
-                <a href="1/hangout.html"> hangout</a>
-            </div>
-        </div>
-
-        <div class="section">
-            <h2 class="section-heading"> Tools & Utilities</h2>
-            <div class="links">
-                <a href="1/bing.html"> Microsoft Rewards Farming</a>
-                <a href="1/test.html"> Test Page</a>
-                <a href="1/form.html"> Form</a>
-                <a href="1/tea.html"> Tea Page</a>
-                <a href="1/learn.html"> Learn</a>
-            </div>
-        </div>
-
-        <div class="section">
-            <h2 class="section-heading"> Resources & Files</h2>
-            <div class="links">
-                <a href="resources.html"> View All Resources</a>
-                <a href="4.html"> Extra Stuff Collection</a>
-                <a href="1/proxies.txt"> HTTP Proxies</a>
-                <a href="1/usernames.txt"> Usernames</a>
-                <a href="g.mp4"> Keydrick Video</a>
-                <a href="1/ye.gif"> Haircut GIF</a>
-            </div>
-        </div>
-
-        <div class="section">
-            <h2 class="section-heading"> Media & Images</h2>
-            <div class="links">
-                <a href="jig.jpg"> image</a>
-                <a href="poggers.gif"> poggers gif/a>
-                <a href="pride.png"> pride image</a>
-                <a href="goku.png"> goku image</a>
-            </div>
-        </div>
+        // Create particles
+        for (let i = 0; i < 150; i++) {
+            const particle = document.createElement('div');
+            particle.style.position = 'absolute';
+            particle.style.width = Math.random() * 3 + 1 + 'px';
+            particle.style.height = particle.style.width;
+            particle.style.background = Math.random() > 0.5 ? '#9370DB' : '#E6E6FA';
+            particle.style.borderRadius = '50%';
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.top = Math.random() * 100 + '%';
+            particle.style.opacity = Math.random() * 0.4 + 0.1;
+            particle.style.animation = `float ${Math.random() * 15 + 10}s infinite ease-in-out`;
+            particle.style.animationDelay = `${Math.random() * 5}s`;
+            particle.style.filter = 'blur(1px)';
+            container.appendChild(particle);
+        }
         
-        <div class="footer">they didnt believe in us</div>
-    </div>
-
-    <div class="footer">
-        <p>Contact Information:</p>
-        <p>
-            <a href="https://www.facebook.com/profile.php?id=61d556018145714">Facebook</a> |
-            <a href="https://www.instagram.com/davescab590/">Instagram</a> |
-            <a href="https://www.linkedin.com/in/2-5-9942d7a2a1/">LinkedIn</a> |
-            <a href="https://www.youtube.com/@tschernocbyl1">YouTube</a> |
-            <a href="https://twitter.com/yessusd981537">Twitter</a>
-        </p>
-        <p>Phone: 588-768-9392</p>
-    </div>
+        // Create cards with data
+        const cardData = [
+            {
+                title: "🎮 Games",
+                links: [
+                    { text: "Robux Generator", url: "2.html" },
+                    { text: "Bee Swarm Simulator", url: "bss.html" },
+                    { text: "Minecraft", url: "1/minecraft.html" },
+                    { text: "UNO", url: "1/uno.html" },
+                    { text: "Chess", url: "1/chest.html" },
+                    { text: "Fight Game", url: "1/fig.html" },
+                    { text: "Fake Roblox", url: "roadblocks.html" },
+                    { text: "Ablungus", url: "1/ablungus.html" },
+                    { text: "Hangout", url: "1/hangout.html" }
+                ],
+                position: { top: '20%', left: '10%' }
+            },
+            {
+                title: "🛠️ Tools",
+                links: [
+                    { text: "MS Rewards Farming", url: "1/bing.html" },
+                    { text: "Test Page", url: "1/test.html" },
+                    { text: "Form", url: "1/form.html" },
+                    { text: "Tea Page", url: "1/tea.html" },
+                    { text: "Learn", url: "1/learn.html" }
+                ],
+                position: { top: '20%', right: '10%' }
+            },
+            {
+                title: "📦 Resources",
+                links: [
+                    { text: "View All Resources", url: "resources.html" },
+                    { text: "Extra Stuff", url: "4.html" },
+                    { text: "HTTP Proxies", url: "1/proxies.txt" },
+                    { text: "Usernames", url: "1/usernames.txt" },
+                    { text: "Keydrick Video", url: "g.mp4" }
+                ],
+                position: { bottom: '15%', left: '10%' }
+            },
+            {
+                title: "🖼️ Media",
+                links: [
+                    { text: "Image", url: "jig.jpg" },
+                    { text: "Poggers GIF", url: "poggers.gif" },
+                    { text: "Pride Image", url: "pride.png" },
+                    { text: "Goku Image", url: "goku.png" },
+                    { text: "Haircut GIF", url: "1/ye.gif" }
+                ],
+                position: { bottom: '15%', right: '10%' }
+            }
+        ];
+        
+        // Create and position cards
+        cardData.forEach((card, index) => {
+            const cardElement = document.createElement('div');
+            cardElement.className = 'card';
+            cardElement.innerHTML = `
+                <h2>${card.title}</h2>
+                <div class="links">
+                    ${card.links.map(link => `<a href="${link.url}">${link.text}</a>`).join('')}
+                </div>
+            `;
+            
+            // Set position
+            Object.keys(card.position).forEach(key => {
+                cardElement.style[key] = card.position[key];
+            });
+            
+            // Add animation delay
+            cardElement.style.animation = 'fadeIn 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards';
+            cardElement.style.animationDelay = `${index * 0.15}s`;
+            
+            container.appendChild(cardElement);
+            
+            // Add entrance animation
+            setTimeout(() => {
+                cardElement.style.opacity = '1';
+            }, index * 150);
+        });
+        
+        // Mouse parallax effect
+        document.addEventListener('mousemove', (e) => {
+            const cards = document.querySelectorAll('.card');
+            const mouseX = e.clientX / window.innerWidth;
+            const mouseY = e.clientY / window.innerHeight;
+            
+            cards.forEach((card, index) => {
+                const depth = (index + 1) * 0.5;
+                const moveX = (mouseX - 0.5) * depth * 20;
+                const moveY = (mouseY - 0.5) * depth * 20;
+                card.style.transform = `translate(${moveX}px, ${moveY}px)`;
+            });
+        });
+    </script>
 </body>
 </html>
