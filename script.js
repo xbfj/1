@@ -78,10 +78,10 @@ class BottleGeometry extends THREE.BufferGeometry{
 class Bottle extends THREE.InstancedMesh{
   constructor(){
     const fragrances = [
-      {name: "Chizra", color: 220, description: "The Nali God of Water.<br><br>Feel the wet freshness."},
-      {name: "Velora", color: 160, description: "Meet the Stone Giant.<br><br>Breathe the scent of ancient pass."},
-      {name: "Skaarj", color: 40, description: "Fast. Rageous.<br><br>Embrace the smell of sharpen steel."},
-      {name: "Vortex", color: 340, description: "Vortex Rikers.<br><br>You don't forget the air of danger."}
+      {name: "Chizra", color: 220, description: "The Nali God of Water.<br><br>Feel the wet freshness.", url: "bss.html"},
+      {name: "Velora", color: 160, description: "Meet the Stone Giant.<br><br>Breathe the scent of ancient pass.", url: "resources.html"},
+      {name: "Skaarj", color: 40, description: "Fast. Rageous.<br><br>Embrace the smell of sharpen steel.", url: "2.html"},
+      {name: "Vortex", color: 340, description: "Vortex Rikers.<br><br>You don't forget the air of danger.", url: "roadblocks.html"}
     ];
 
     const g = new BottleGeometry();
@@ -281,46 +281,14 @@ class BottleController {
       this.raycaster.setFromCamera(this.pointer, camera);
       this.intersects = this.raycaster.intersectObject(this.bottle);
       if (this.intersects.length != 0){
-
-        this.bottle.rotationSpeed = 0;
-        this.controlsOn(false);
-        
         const obj = this.intersects[0];
         const iID = obj.instanceId;
         
-        container.style.opacity = 0;
-        container.style.display = "block";
-        
-        const description = bottle.fragrances[iID].description;
-        text.innerHTML = description;
-        
-        const currentDistance = this.controls.getDistance();
-        
-        const objPos = bottle.proxy[iID].position.clone().setY(0).normalize();
-        this.fadeOutDir.copy(objPos);
-        const camPos = this.controls.object.position.clone().setY(0).normalize();
-        const angle = objPos.angleTo(camPos);
-        const normal = objPos.cross(camPos).normalize().negate();
-        
-        const duration = angle / (Math.PI * 0.5);
-        
-        const tweenCamera = new TWEEN.Tween({val: 0}).to({val: 1}, duration * 1000)
-          .easing(TWEEN.Easing.Cubic.InOut)
-          .onUpdate(val => {
-            const dist = mu.lerp(currentDistance, this.minDistance, val.val);
-            this.controls.object.position.copy( camPos )
-              .applyAxisAngle( normal, angle * val.val )
-              .setLength( dist )
-              .add( this.controls.target );
-            this.controls.object.lookAt(this.controls.target);
-          });
-        
-        const tweenShow = new TWEEN.Tween({val: 0}).to({val: 1}, 250)
-          .easing(TWEEN.Easing.Cubic.InOut)
-          .onUpdate(val => {container.style.opacity = val.val});
-        
-        tweenCamera.chain(tweenShow);
-        tweenCamera.start();
+        // Redirect to the URL associated with the clicked bottle
+        const url = bottle.fragrances[iID].url;
+        if (url) {
+          window.location.href = url;
+        }
       }
   }
   
