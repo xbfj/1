@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+body{
+  overflow: hidden;
+  margin: 0;
+}
+
+.container{
+  display: none;
+  position: absolute;
+  bottom: 5vh;
+  left: 50%;
+  transform: translate(-50%, 0);
+  height: 17vh;
+  aspect-ratio: 3;
+  background: rgba(0, 0, 0, 0.5);
+  clip-path: polygon(10% 0, 100% 0, 90% 100%, 0 100%);
+  padding: 5vh 10vh;
+  color: white;
+  
+  font-family: "Orbitron", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-size: 3.5vh;
+}
+
+.btnClose{
+  position: absolute;
+  width: 5vh;
+  height: 5vh;
+  top: 0.5vh;
+  right: 3vh;
+  border: 0.25vh solid white;
+  border-radius: 1vh;
+  background: transparent;
+  color: white;
+  padding: 0;
+  
+  font-family: "Orbitron", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-size: 4vh;
+}
+
+.btnProceed{
+  position: absolute;
+  bottom: 2vh;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 1.5vh 4vh;
+  border: 0.25vh solid white;
+  border-radius: 1vh;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  cursor: pointer;
+  
+  font-family: "Orbitron", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-size: 2.5vh;
+  transition: all 0.3s ease;
+}
+
+.btnProceed:hover{
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateX(-50%) scale(1.05);
+}
